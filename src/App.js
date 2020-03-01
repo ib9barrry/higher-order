@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Goku from './Goku';
+import Vegeta from './Vegeta';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+
+  state = {
+    Goku: 100,
+    Vegeta: 100
+  }
+
+  render(){
+    return (
+      <div className="container text-center ">
+        <h1> Goku VS  Vegeta </h1>
+        <hr />
+        Quand je finis apres tu peux regarder !
+        <div className='row'>
+          <Goku name= "Goku" life={this.state.Goku} />
+          <Vegeta name= "Vegeta" life={this.state.Vegeta} />
+        </div>
+
+      </div>
+    );
+  }
 }
 
 export default App;
